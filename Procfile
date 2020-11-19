@@ -1,0 +1,1 @@
+web: gunicorn edufund.wsgi --log-file -
