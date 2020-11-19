@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'rest_framework',
-    'rest_framework.authtoken',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -72,12 +72,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'edufund.wsgi.application'
 
+
 # rest framework auth
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'knox.auth.TokenAuthentication',
     )
 }
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
