@@ -26,7 +26,7 @@ SECRET_KEY = 'm^#$aw*73v^fl_(5z7xigsz7&b0b9xv6hmkro08@&rf=m2=ea1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['prj-edufund.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['prj-edufund.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
