@@ -26,7 +26,8 @@ SECRET_KEY = 'm^#$aw*73v^fl_(5z7xigsz7&b0b9xv6hmkro08@&rf=m2=ea1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['prj-edufund.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['prj-edufund.herokuapp.com', '127.0.0.1', ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'phonenumber_field',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'edufund.urls'
