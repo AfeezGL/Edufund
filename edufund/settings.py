@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'm^#$aw*73v^fl_(5z7xigsz7&b0b9xv6hmkro08@&rf=m2=ea1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['prj-pitchyou.herokuapp.com', '127.0.0.1', ]
 CORS_ORIGIN_ALLOW_ALL = True
