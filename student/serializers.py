@@ -1,13 +1,15 @@
 from rest_framework import serializers
-from .models import User
+from account.models import User
 from django.contrib.auth import authenticate
 
-class UserSerializer(serializers.ModelSerializer):
+
+class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email']
+        fields = ['id', 'email', 'first_name', 'last_name', 'is_student']
 
-class RegisterSerializer(serializers.ModelSerializer):
+
+class RegisterStudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'first_name', 'last_name', 'email', 'password']
@@ -17,11 +19,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         password = validated_data.pop('password')
         user = User(**validated_data)
         user.set_password(password)
+        user.is_student = True
         user.save()
         return user
 
+
 # Login serializer
-class LoginSerializer(serializers.Serializer):
+class LoginStudentSerializer(serializers.Serializer):
     email = serializers.CharField()
     password = serializers.CharField()
 

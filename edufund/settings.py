@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
+    'student.apps.StudentConfig',
+    'sponsor.apps.SponsorConfig',
     'rest_framework',
     'knox',
     'phonenumber_field',
