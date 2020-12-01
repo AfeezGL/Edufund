@@ -1,8 +1,9 @@
 from account.models import User
+from .models import Certification
 from knox.models import AuthToken
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, viewsets
 from rest_framework.response import Response
-from .serializers import StudentSerializer, RegisterStudentSerializer, LoginStudentSerializer
+from .serializers import StudentSerializer, RegisterStudentSerializer, LoginStudentSerializer, CertificationSerializer
 
 class RegisterStudent(generics.GenericAPIView):
     serializer_class = RegisterStudentSerializer
@@ -27,3 +28,13 @@ class LoginStudent(generics.GenericAPIView):
             "user": StudentSerializer(user, context = self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]
         })
+
+class CertificationView(viewsets.ModelViewSet):
+    serializer_class = CertificationSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        return self.request.user.certs.all()
+    
+    def perform_create(self, serializer):
+        serializer.save(student = self.request.user)
