@@ -38,3 +38,5 @@ class CertificationView(viewsets.ModelViewSet):
     
     def perform_create(self, serializer):
         serializer.save(student = self.request.user)
+
+
