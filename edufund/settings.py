@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
+    'student.apps.StudentConfig',
+    'sponsor.apps.SponsorConfig',
     'rest_framework',
     'knox',
     'phonenumber_field',
@@ -75,6 +77,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+AUTH_USER_MODEL = 'account.User'
 
 WSGI_APPLICATION = 'edufund.wsgi.application'
 
@@ -139,11 +144,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

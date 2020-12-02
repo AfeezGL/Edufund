@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from knox import views as knox_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('account.urls')),
+    path('student/', include('student.urls')),
+    path('sponsor/', include('sponsor.urls')),
+    path('account/', include('account.urls')),
+    path('logout', knox_views.LogoutView.as_view(), name = 'logout'),
     path('api-auth/', include('rest_framework.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
