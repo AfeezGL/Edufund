@@ -24,6 +24,7 @@ urlpatterns = [
     path('student/', include('student.urls')),
     path('sponsor/', include('sponsor.urls')),
     path('account/', include('account.urls')),
+    path('pitch/', include('pitch.urls')),
     path('logout', knox_views.LogoutView.as_view(), name = 'logout'),
     path('api-auth/', include('rest_framework.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

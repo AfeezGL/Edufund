@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'student.apps.StudentConfig',
     'sponsor.apps.SponsorConfig',
+    'pitch.apps.PitchConfig',
     'rest_framework',
     'knox',
     'phonenumber_field',
