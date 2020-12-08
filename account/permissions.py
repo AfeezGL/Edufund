@@ -11,7 +11,7 @@ class IsStudentOrReadOnly(BasePermission):
             return request.user.is_student
     
     def has_object_permission(self, request, view, obj):
-        if request.methed in SAFE_METHODS:
+        if request.method in SAFE_METHODS:
             return True
         else:
             return obj.student == request.user

@@ -35,7 +35,7 @@ class User(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    profile_picture = models.ImageField(null=True)
+    profile_picture = models.ImageField()
     phone_number = PhoneNumberField()
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now=True)

@@ -86,11 +86,7 @@ WSGI_APPLICATION = 'edufund.wsgi.application'
 
 
 # rest framework auth
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'knox.auth.TokenAuthentication',
-    )
-}
+
 
 
 # Database
